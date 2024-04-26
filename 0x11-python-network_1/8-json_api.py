@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/usr/bin/python3
 """Takes in a letter and sends a post request
 to the URL and displays the body of the response."""
 
