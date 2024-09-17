@@ -1,23 +1,30 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from calculator_1 import add, sub, mul, div
-    from sys import argv
-    num_args = len(argv)
-    if num_args != 4:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
-        a = int(argv[1])
-        operator = argv[2]
-        b = int(argv[3])
-        if operator == '+':
-            print(f"{a} {operator} {b} = {add(a, b)}")
-        elif operator == '-':
-            print(f"{a} {operator} {b} = {sub(a, b)}")
-        elif operator == '*':
-            print(f"{a} {operator} {b} = {mul(a, b)}")
-        elif operator == '/':
-            print(f"{a} {operator} {b} = {div(a, b)}")
-        else:
-            print("Unknown operator. Available operators: +, -, *, /")
-            esit(1)
+from sys import argv
+from calculator_1 import add, sub, mul, div
 
+if (__name__ == "__main__"):
+    argc = len(argv)
+    result = 0
+    operators = ["+", "-", "*", "/"]
+
+    if (argc != 4):
+        print(f"Usage: {argv[0]} <a> <operator> <b>")
+        exit(1)
+
+    if (argv[2] not in operators):
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
+
+    num1 = int(argv[1])
+    operator = argv[2]
+    num2 = int(argv[3])
+
+    if (operator == "+"):
+        result = add(num1, num2)
+    elif (operator == "-"):
+        result = sub(num1, num2)
+    elif (operator == "*"):
+        result = mul(num1, num2)
+    else:
+        result = div(num1, num2)
+    print(f"{num1} {operator} {num2} = {result}")
