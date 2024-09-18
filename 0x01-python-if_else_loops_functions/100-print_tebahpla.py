@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for i in range(ord('z'), ord('a') - 1, -2):
-    print("".format(chr(i), chr(i - 33)), end='')
+for ch in reversed(range(97, 123)):
+    print("{:c}".format(ch if (ch % 2 == 0) else (ch - 32)), end='')
